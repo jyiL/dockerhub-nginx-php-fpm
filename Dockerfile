@@ -10,4 +10,4 @@ RUN wget https://ftp.postgresql.org/pub/source/v10.3/postgresql-10.3.tar.gz && t
   && pecl install mongodb && echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/pecl-mongodb.ini && pecl install grpc \
   && echo "extension=grpc.so" > /usr/local/etc/php/conf.d/pecl-grpc.ini && pecl install protobuf \
   && echo "extension=protobuf.so" > /usr/local/etc/php/conf.d/pecl-protobuf.ini && rm -rf /tmp/pear/download/* \
-  && supervisorctl restart php-fpm && apk del gcc g++ m4 autoconf make readline readline-dev
+  && supervisorctl restart php-fpm && apk del gcc g++ m4 autoconf make readline readline-dev && rm -rf /var/www/html/*
